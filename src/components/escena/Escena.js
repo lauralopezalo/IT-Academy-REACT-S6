@@ -14,6 +14,7 @@ const StyledButton = styled.button`
 width: 50%;
 padding: 20px;
 font-size: 20px;
+cursor: pointer;
 `
 
 const Escena = (props) => {
@@ -37,11 +38,7 @@ const Escena = (props) => {
             <StyledButton onClick={nextClick}>Següent</StyledButton>
 
             {props.param.map((line, index) => (
-                <StyledLine
-                    key={index}
-                    isColored={coloredLine === index}
-                >{line}
-                </StyledLine>
+                <StyledLine key={index} isColored={coloredLine === index}>{line}</StyledLine>
             ))}
         </div>);
 }

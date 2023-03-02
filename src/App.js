@@ -1,12 +1,17 @@
-import './App.css';
+import React, { useState } from "react";
 import Escena from './components/escena/Escena';
 import JSONfile from './text.json';
+import Welcome from "./components/Welcome";
 
 function App() {
 
+  const [showWelcome, setShowWelcome] = useState(true);
+
+  const handleStartButtonClick = () => { setShowWelcome(false) }
+
   return (
     <div>
-      <Escena param={JSONfile}></Escena>
+      {showWelcome ? (<Welcome startButtonClick={handleStartButtonClick}/>) : (<Escena param={JSONfile}/>)}
     </div>
   );
 }
