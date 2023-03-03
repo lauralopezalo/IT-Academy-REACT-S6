@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Escena from './components/escena/Escena';
-import JSONfile from './text.json';
+import history from './assets/history';
 import Welcome from "./components/Welcome";
 
 function App() {
@@ -11,7 +11,7 @@ function App() {
 
   return (
     <div>
-      {showWelcome ? (<Welcome startButtonClick={handleStartButtonClick}/>) : (<Escena param={JSONfile}/>)}
+      {showWelcome ? (<Welcome startButtonClick={handleStartButtonClick}/>) : (<Escena param={history}/>)}
     </div>
   );
 }
