@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import Escena from './components/escena/Escena';
+import Welcome from "./components/Welcome/Welcome";
+import Escena from './components/Escena/Escena';
 import history from './assets/history';
-import Welcome from "./components/Welcome";
+import { GlobalStyle } from './GlobalStyle';
 
 function App() {
 
@@ -11,7 +12,8 @@ function App() {
 
   return (
     <div>
-      {showWelcome ? (<Welcome startButtonClick={handleStartButtonClick}/>) : (<Escena param={history}/>)}
+      <GlobalStyle />
+      {showWelcome ? (<Welcome startButtonClick={handleStartButtonClick} />) : (<Escena param={history} />)}
     </div>
   );
 }
